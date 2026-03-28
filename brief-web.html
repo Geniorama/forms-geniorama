@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brief · Sitio Web — Geniorama</title>
+  <meta name="description" content="Cuéntanos sobre tu proyecto web. Completa este formulario para que podamos cotizarlo con precisión.">
+  <meta name="robots" content="noindex">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pink: '#e41279',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Brand CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- Lucide Icons (line icons, consistent set) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  HEADER FIJO                             ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<header class="fixed top-0 inset-x-0 z-50 bg-[#000a3d]/95 backdrop-blur-sm border-b border-[#0b1558]">
+  <div class="max-w-2xl mx-auto px-5 py-3.5 flex items-center justify-between">
+
+    <!-- Logo Geniorama (SVG inline) -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="130" height="21" viewBox="0 0 192.825 31.11" aria-label="Geniorama" role="img">
+      <defs><clipPath id="gclip"><path style="fill:#fff" d="M0 0h192.825v31.109H0z"/></clipPath></defs>
+      <path d="M1.381 15.555 15.555 1.381l14.173 14.174-14.173 14.174zM15.555 0 0 15.555l15.555 15.554 15.554-15.554z" style="fill:#fff"/>
+      <path d="M24.659 35.757 13.525 24.614 24.6 13.54l1.933 1.933-9.141 9.141 9.2 9.21z" transform="translate(-9.049 -9.059)" style="fill:#fff"/>
+      <path d="m55.514 40.257-1.943-1.923 5.051-5.1-4.922-4.992 1.929-1.9 6.893 6.913z" transform="translate(-35.843 -17.623)" style="fill:#fff"/>
+      <path transform="rotate(-45 25.068 -7.41)" style="fill:#fff" d="M0 0h4.204v4.204H0z"/>
+      <g style="clip-path:url(#gclip)">
+        <path d="M117.642 29.97H125v8.336h-2.492v-2.152a6.369 6.369 0 0 1-5.346 2.447 7.977 7.977 0 0 1-8-8.223 8.055 8.055 0 0 1 8.223-8.224 7.747 7.747 0 0 1 7.611 5.5h-2.764a5.119 5.119 0 0 0-4.848-2.968 5.43 5.43 0 0 0-5.618 5.686 5.5 5.5 0 0 0 5.618 5.8c2.628 0 4.78-1.359 5.006-3.874h-4.757z" transform="translate(-73.043 -14.823)" style="fill:#fff"/>
+        <path d="M185.409 36.41v2.49h-9.288V23.044h9.179v2.492h-6.57v4.123h6v2.447h-6v4.3z" transform="translate(-117.838 -15.418)" style="fill:#fff"/>
+        <path d="M233.245 23.044V38.9h-2.039l-6.683-10.76V38.9h-2.605V23.044h2.039L230.64 33.8V23.044z" transform="translate(-148.479 -15.418)" style="fill:#fff"/>
+        <path transform="translate(91.426 7.626)" style="fill:#fff" d="M0 0h2.605v15.857H0z"/>
+        <path d="M301.875 30.378A8.223 8.223 0 1 1 310.1 38.6a8.165 8.165 0 0 1-8.223-8.223m13.841 0a5.619 5.619 0 1 0-5.618 5.686 5.535 5.535 0 0 0 5.618-5.686" transform="translate(-201.976 -14.823)" style="fill:#fff"/>
+        <path d="M374.379 33.126h-2.469V38.9h-2.61V23.045h5.89a5.036 5.036 0 0 1 1.971 9.7l5.165 6.162h-3.1zm-2.469-2.333h3.285a2.655 2.655 0 0 0 0-5.3h-3.285z" transform="translate(-247.092 -15.419)" style="fill:#fff"/>
+        <path d="M429.013 35.707h-6.592l-1.064 3.193h-2.832l5.64-15.857h3.126L432.91 38.9h-2.81zm-.838-2.447-2.447-7.249-2.469 7.249z" transform="translate(-280.024 -15.418)" style="fill:#fff"/>
+        <path d="M492.849 38.9h-2.605V27.348l-3.965 8.952h-2.039l-3.964-8.948V38.9h-2.605V23.044h3.035l4.554 10.239 4.553-10.239h3.036z" transform="translate(-319.597 -15.418)" style="fill:#fff"/>
+        <path d="M549.7 35.707h-6.59l-1.065 3.193h-2.832l5.641-15.857h3.126L553.6 38.9h-2.809zm-.838-2.447-2.446-7.249-2.469 7.249z" transform="translate(-360.773 -15.418)" style="fill:#fff"/>
+      </g>
+    </svg>
+
+    <div class="flex items-center gap-4">
+      <span id="step-indicator" class="text-xs text-[#555] font-mono tracking-wide">Paso 1 de 8</span>
+      <button id="btn-reset" class="text-xs text-[#444] hover:text-[#e41279] transition-colors duration-150">
+        Reiniciar
+      </button>
+    </div>
+  </div>
+  <!-- Progress bar -->
+  <div class="h-px bg-[#0b1558]">
+    <div id="progress-bar" class="progress-bar" style="width:12.5%"></div>
+  </div>
+</header>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  CONTENIDO PRINCIPAL                     ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<main class="max-w-2xl mx-auto px-5 pt-24 pb-36">
+
+  <!-- Wrapper de pasos (se oculta en success) -->
+  <div id="form-wrapper">
+
+    <!-- ─────────────────────────────────────────
+         PASO 1 · CONTACTO
+    ───────────────────────────────────────── -->
+    <section class="step" data-step="1">
+      <div class="mb-8">
+        <span class="step-number">01 / 08</span>
+        <h1 class="step-title">Hola,<br>cuéntanos<br>sobre ti</h1>
+        <p class="step-subtitle">Necesitamos algunos datos para ponernos en contacto.</p>
+      </div>
+
+      <div class="space-y-5">
+        <div class="form-group">
+          <label class="field-label" for="nombre">Nombre completo *</label>
+          <input class="field-input" type="text" id="nombre" data-field="nombre"
+                 placeholder="Tu nombre y apellido" autocomplete="name" required>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="empresa">Empresa / Marca *</label>
+          <input class="field-input" type="text" id="empresa" data-field="empresa"
+                 placeholder="Nombre de tu empresa o proyecto" autocomplete="organization" required>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="form-group">
+            <label class="field-label" for="email">Email *</label>
+            <input class="field-input" type="email" id="email" data-field="email"
+                   placeholder="tu@correo.com" autocomplete="email" required>
+          </div>
+          <div class="form-group">
+            <label class="field-label" for="telefono">Teléfono / WhatsApp</label>
+            <input class="field-input" type="tel" id="telefono" data-field="telefono"
+                   placeholder="+57 300 000 0000" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="pais">País</label>
+          <select class="field-select" id="pais" data-field="pais">
+            <option value="">Selecciona tu país</option>
+            <option>Colombia</option>
+            <option>México</option>
+            <option>Argentina</option>
+            <option>Chile</option>
+            <option>Perú</option>
+            <option>Ecuador</option>
+            <option>Venezuela</option>
+            <option>España</option>
+            <option>Estados Unidos</option>
+            <option>Otro</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────
+         PASO 2 · EL PROYECTO
+    ───────────────────────────────────────── -->
+    <section class="step hidden" data-step="2">
+      <div class="mb-8">
+        <span class="step-number">02 / 08</span>
+        <h1 class="step-title">Cuéntanos<br>de tu<br>proyecto</h1>
+        <p class="step-subtitle">Entre más detalle, mejor podremos ayudarte.</p>
+      </div>
+
+      <div class="space-y-5">
+        <div class="form-group">
+          <label class="field-label" for="proyectoNombre">Nombre del proyecto *</label>
+          <input class="field-input" type="text" id="proyectoNombre" data-field="proyectoNombre"
+                 placeholder="¿Cómo se llama tu sitio web o proyecto?" required>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">¿Tienes un sitio web actualmente?</label>
+          <div class="toggle-group mt-2" data-group="tieneWeb">
+            <button type="button" class="toggle-pill" data-value="si">Sí, tengo</button>
+            <button type="button" class="toggle-pill" data-value="no">No tengo</button>
+          </div>
+        </div>
+
+        <div class="form-group hidden" id="url-actual-group">
+          <label class="field-label" for="urlActual">URL del sitio actual</label>
+          <input class="field-input" type="url" id="urlActual" data-field="urlActual"
+                 placeholder="https://tusitio.com">
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="descripcion">Describe tu proyecto *</label>
+          <textarea class="field-textarea" id="descripcion" data-field="descripcion" rows="4"
+                    placeholder="¿A qué se dedica tu empresa? ¿A quién va dirigido el sitio? ¿Qué necesitas comunicar?" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="objetivo">Objetivo principal del sitio *</label>
+          <select class="field-select" id="objetivo" data-field="objetivo" required>
+            <option value="">Selecciona el objetivo principal</option>
+            <option value="vender">Vender productos o servicios online</option>
+            <option value="leads">Generar leads / solicitudes de contacto</option>
+            <option value="informar">Informar y educar a mi audiencia</option>
+            <option value="marca">Posicionar y fortalecer mi marca</option>
+            <option value="comunidad">Construir una comunidad</option>
+            <option value="portal">Portal o plataforma para usuarios registrados</option>
+            <option value="objetivo_otro">Otro</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────
+         PASO 3 · TIPO DE SITIO
+    ───────────────────────────────────────── -->
+    <section class="step hidden" data-step="3">
+      <div class="mb-8">
+        <span class="step-number">03 / 08</span>
+        <h1 class="step-title">¿Qué tipo<br>de sitio<br>necesitas?</h1>
+        <p class="step-subtitle">Selecciona la opción que mejor describe tu proyecto. *</p>
+      </div>
+
+      <div class="cards-grid" data-group="tipoSitio">
+
+        <div class="select-card" data-value="landing">
+          <div class="card-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <i data-lucide="rocket" class="card-icon"></i>
+          <div class="card-title">Landing Page</div>
+          <div class="card-desc">Página única orientada a un objetivo concreto: vender, captar leads, lanzar un producto.</div>
+        </div>
+
+        <div class="select-card" data-value="corporativo">
+          <div class="card-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <i data-lucide="building-2" class="card-icon"></i>
+          <div class="card-title">Sitio corporativo</div>
+          <div class="card-desc">Presenta tu empresa, servicios y equipo. El clásico sitio informativo multipage.</div>
+        </div>
+
+        <div class="select-card" data-value="catalogo">
+          <div class="card-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <i data-lucide="package" class="card-icon"></i>
+          <div class="card-title">Catálogo de productos</div>
+          <div class="card-desc">Muestra tu portafolio o inventario sin necesidad de pagos online.</div>
+        </div>
+
+        <div class="select-card" data-value="ecommerce">
+          <div class="card-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <i data-lucide="shopping-cart" class="card-icon"></i>
+          <div class="card-title">Tienda online</div>
+          <div class="card-desc">E-commerce con carrito de compras, pagos en línea y gestión de pedidos.</div>
+        </div>
+
+        <div class="select-card" data-value="blog">
+          <div class="card-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <i data-lucide="file-text" class="card-icon"></i>
+          <div class="card-title">Blog / portal</div>
+          <div class="card-desc">Publicación de artículos, noticias o contenido educativo de forma regular.</div>
+        </div>
+
+        <div class="select-card" data-value="plataforma">
+          <div class="card-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <i data-lucide="layers" class="card-icon"></i>
+          <div class="card-title">Plataforma web</div>
+          <div class="card-desc">Aplicación con login, dashboards, lógica de negocio compleja o SaaS.</div>
+        </div>
+
+        <div class="select-card" data-value="educativo">
+          <div class="card-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <i data-lucide="book-open" class="card-icon"></i>
+          <div class="card-title">Portal educativo</div>
+          <div class="card-desc">Cursos, lecciones, exámenes y gestión de estudiantes o comunidades de aprendizaje.</div>
+        </div>
+
+        <div class="select-card" data-value="tipo_otro">
+          <div class="card-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <i data-lucide="globe" class="card-icon"></i>
+          <div class="card-title">Otro</div>
+          <div class="card-desc">Tengo algo diferente en mente. Lo describiré en el siguiente paso.</div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────
+         PASO 4 · FASES DEL PROYECTO
+    ───────────────────────────────────────── -->
+    <section class="step hidden" data-step="4">
+      <div class="mb-8">
+        <span class="step-number">04 / 08</span>
+        <h1 class="step-title">¿Qué fases<br>necesitas?</h1>
+        <p class="step-subtitle">Selecciona todo lo que Geniorama debe cubrir. Puedes elegir varias.</p>
+      </div>
+
+      <div class="check-items" data-group="fases">
+
+        <div class="check-item" data-value="estrategia">
+          <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">Estrategia y arquitectura de información</div><div class="check-sublabel">Estructura del sitio, sitemap, flujos de usuario y definición de contenido</div></div>
+        </div>
+
+        <div class="check-item" data-value="disenio_ux">
+          <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">Diseño UX/UI</div><div class="check-sublabel">Wireframes, prototipo interactivo y diseño visual de todas las pantallas</div></div>
+        </div>
+
+        <div class="check-item" data-value="contenido">
+          <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">Redacción y generación de contenido</div><div class="check-sublabel">Textos, copys, descripciones y contenido escrito para el sitio</div></div>
+        </div>
+
+        <div class="check-item" data-value="foto_video">
+          <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">Fotografía y video profesional</div><div class="check-sublabel">Producción audiovisual: fotos de producto, equipo, instalaciones o video corporativo</div></div>
+        </div>
+
+        <div class="check-item" data-value="desarrollo">
+          <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">Desarrollo web</div><div class="check-sublabel">Maquetación del diseño, frontend, backend e integraciones</div></div>
+        </div>
+
+        <div class="check-item" data-value="cms">
+          <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">Configuración de CMS</div><div class="check-sublabel">Panel de administración para que puedas editar el contenido sin saber de código</div></div>
+        </div>
+
+        <div class="check-item" data-value="pasarela">
+          <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">Integración de pasarela de pagos</div><div class="check-sublabel">Cobros online: tarjeta, PSE, transferencias, PayPal, Stripe u otras</div></div>
+        </div>
+
+        <div class="check-item" data-value="despliegue">
+          <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">Despliegue y configuración</div><div class="check-sublabel">Hosting, dominio, certificado SSL, correos corporativos y puesta en producción</div></div>
+        </div>
+
+        <div class="check-item" data-value="seo">
+          <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">SEO técnico y on-page</div><div class="check-sublabel">Optimización para motores de búsqueda, metadatos, velocidad y estructura semántica</div></div>
+        </div>
+
+        <div class="check-item" data-value="capacitacion">
+          <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="check-label">Capacitación y manual de uso</div><div class="check-sublabel">Sesión de entrenamiento y documentación para que administres tu sitio con confianza</div></div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────
+         PASO 5 · FUNCIONALIDADES E IDIOMAS
+    ───────────────────────────────────────── -->
+    <section class="step hidden" data-step="5">
+      <div class="mb-8">
+        <span class="step-number">05 / 08</span>
+        <h1 class="step-title">Funciona-<br>lidades<br>e idiomas</h1>
+        <p class="step-subtitle">Define el alcance y las características del sitio.</p>
+      </div>
+
+      <!-- Páginas -->
+      <div class="mb-7">
+        <label class="field-label block mb-3">¿Cuántas páginas necesitas aproximadamente?</label>
+        <div class="toggle-group" data-group="paginas">
+          <button type="button" class="toggle-pill" data-value="1-3">1 – 3</button>
+          <button type="button" class="toggle-pill" data-value="4-8">4 – 8</button>
+          <button type="button" class="toggle-pill" data-value="9-15">9 – 15</button>
+          <button type="button" class="toggle-pill" data-value="16-30">16 – 30</button>
+          <button type="button" class="toggle-pill" data-value="mas30">+30</button>
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- Idiomas -->
+      <div class="mb-7">
+        <label class="field-label block mb-3">Idiomas del sitio <span class="normal-case text-[#555]">(puedes elegir varios)</span></label>
+        <div class="toggle-group" data-group="idiomas" data-multi="true">
+          <button type="button" class="toggle-pill" data-value="lang_es">Español</button>
+          <button type="button" class="toggle-pill" data-value="lang_en">Inglés</button>
+          <button type="button" class="toggle-pill" data-value="lang_pt">Portugués</button>
+          <button type="button" class="toggle-pill" data-value="lang_fr">Francés</button>
+          <button type="button" class="toggle-pill" data-value="lang_de">Alemán</button>
+          <button type="button" class="toggle-pill" data-value="lang_otro">Otro</button>
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <!-- Funcionalidades -->
+      <div>
+        <label class="field-label block mb-3">Funcionalidades requeridas <span class="normal-case text-[#555]">(selecciona todas las que apliquen)</span></label>
+        <div class="check-items" data-group="funcionalidades">
+
+          <div class="check-item" data-value="f_contacto">
+            <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="check-label">Formulario de contacto</div></div>
+          </div>
+
+          <div class="check-item" data-value="f_blog">
+            <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="check-label">Blog o publicación de noticias</div></div>
+          </div>
+
+          <div class="check-item" data-value="f_galeria">
+            <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="check-label">Galería de fotos o videos</div></div>
+          </div>
+
+          <div class="check-item" data-value="f_carrito">
+            <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="check-label">Carrito de compras</div></div>
+          </div>
+
+          <div class="check-item" data-value="f_pagos">
+            <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="check-label">Pagos online</div><div class="check-sublabel">Tarjeta, PSE, transferencia, PayPal, Stripe u otras pasarelas</div></div>
+          </div>
+
+          <div class="check-item" data-value="f_reservas">
+            <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="check-label">Sistema de citas o reservas</div></div>
+          </div>
+
+          <div class="check-item" data-value="f_privada">
+            <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="check-label">Área privada para clientes</div><div class="check-sublabel">Registro, login y sección de acceso exclusivo</div></div>
+          </div>
+
+          <div class="check-item" data-value="f_chat">
+            <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="check-label">Chat en vivo o chatbot</div></div>
+          </div>
+
+          <div class="check-item" data-value="f_redes">
+            <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="check-label">Integración con redes sociales</div></div>
+          </div>
+
+          <div class="check-item" data-value="f_newsletter">
+            <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="check-label">Newsletter / email marketing</div></div>
+          </div>
+
+          <div class="check-item" data-value="f_buscador">
+            <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="check-label">Buscador interno</div></div>
+          </div>
+
+          <div class="check-item" data-value="f_mapa">
+            <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="check-label">Mapa o geolocalización</div></div>
+          </div>
+
+          <div class="check-item" data-value="f_analitica">
+            <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="check-label">Analítica web</div><div class="check-sublabel">Google Analytics, Tag Manager u otras herramientas de medición</div></div>
+          </div>
+
+          <div class="check-item" data-value="f_i18n">
+            <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div><div class="check-label">Múltiples idiomas (i18n)</div><div class="check-sublabel">Contenido traducido y selector de idioma para el usuario</div></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────
+         PASO 6 · DISEÑO Y MARCA
+    ───────────────────────────────────────── -->
+    <section class="step hidden" data-step="6">
+      <div class="mb-8">
+        <span class="step-number">06 / 08</span>
+        <h1 class="step-title">Diseño<br>y marca</h1>
+        <p class="step-subtitle">Cuéntanos sobre tu identidad visual y referencias.</p>
+      </div>
+
+      <div class="space-y-7">
+
+        <!-- ¿Tiene identidad visual? -->
+        <div>
+          <label class="field-label block mb-3">¿Tienes manual de identidad visual (colores, tipografías, logotipo)?</label>
+          <div class="toggle-group" data-group="tieneIdentidad">
+            <button type="button" class="toggle-pill" data-value="si">Sí, la tengo</button>
+            <button type="button" class="toggle-pill" data-value="no">No tengo</button>
+            <button type="button" class="toggle-pill" data-value="parcial">Tengo algo pero está incompleta</button>
+          </div>
+        </div>
+
+        <!-- ¿Tiene logo? -->
+        <div id="logo-group" class="hidden">
+          <label class="field-label block mb-3">¿Tienes el logo en archivos vectoriales (AI, EPS, SVG)?</label>
+          <div class="toggle-group" data-group="tieneLogo">
+            <button type="button" class="toggle-pill" data-value="si">Sí</button>
+            <button type="button" class="toggle-pill" data-value="no">No, solo tengo PNG o JPG</button>
+            <button type="button" class="toggle-pill" data-value="crear">Necesito que lo diseñen</button>
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- Estilo visual -->
+        <div>
+          <label class="field-label block mb-3">Estilo visual preferido</label>
+          <div class="cards-grid" data-group="estiloVisual">
+
+            <div class="select-card" data-value="estilo_minimal">
+              <div class="card-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <i data-lucide="layout-template" class="card-icon"></i>
+              <div class="card-title">Minimalista</div>
+              <div class="card-desc">Clean, mucho espacio, tipografía protagónica.</div>
+            </div>
+
+            <div class="select-card" data-value="estilo_corp">
+              <div class="card-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <i data-lucide="briefcase" class="card-icon"></i>
+              <div class="card-title">Corporativo</div>
+              <div class="card-desc">Profesional, confiable, estructurado.</div>
+            </div>
+
+            <div class="select-card" data-value="estilo_creativo">
+              <div class="card-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <i data-lucide="pen-tool" class="card-icon"></i>
+              <div class="card-title">Creativo</div>
+              <div class="card-desc">Artístico, innovador, fuera de los estándares.</div>
+            </div>
+
+            <div class="select-card" data-value="estilo_tech">
+              <div class="card-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <i data-lucide="cpu" class="card-icon"></i>
+              <div class="card-title">Tech / Futurista</div>
+              <div class="card-desc">Oscuro, moderno, interfaces complejas y sofisticadas.</div>
+            </div>
+
+            <div class="select-card" data-value="estilo_calido">
+              <div class="card-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <i data-lucide="heart" class="card-icon"></i>
+              <div class="card-title">Cálido y amigable</div>
+              <div class="card-desc">Colores suaves, cercano, humano y accesible.</div>
+            </div>
+
+            <div class="select-card" data-value="estilo_elegante">
+              <div class="card-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <i data-lucide="gem" class="card-icon"></i>
+              <div class="card-title">Elegante / Premium</div>
+              <div class="card-desc">Lujoso, exclusivo, alta gama.</div>
+            </div>
+
+            <div class="select-card sm:col-span-2" data-value="estilo_libre">
+              <div class="card-check"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <i data-lucide="wand-2" class="card-icon"></i>
+              <div class="card-title">Sin preferencia</div>
+              <div class="card-desc">Confío en el criterio y propuesta del equipo Geniorama.</div>
+            </div>
+
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- Referencias -->
+        <div>
+          <label class="field-label block mb-3">Sitios web de referencia <span class="normal-case text-[#555]">(hasta 3 URLs)</span></label>
+          <div class="space-y-3">
+            <input class="field-input" type="url" data-field="ref1" placeholder="https://sitio-que-te-gusta.com">
+            <input class="field-input" type="url" data-field="ref2" placeholder="https://otro-referente.com">
+            <input class="field-input" type="url" data-field="ref3" placeholder="https://un-tercero.com">
+          </div>
+          <p class="text-xs text-[#555] mt-2">Pueden ser sitios de tu industria o simplemente diseños que admiras.</p>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- Qué no quiere -->
+        <div class="form-group">
+          <label class="field-label" for="noQuiere">¿Qué NO quieres ver en el diseño?</label>
+          <textarea class="field-textarea" id="noQuiere" data-field="noQuiere" rows="3"
+                    placeholder="Colores que no te gustan, estilos que descartas, elementos que quieres evitar..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="colores">Colores de referencia</label>
+          <input class="field-input" type="text" id="colores" data-field="colores"
+                 placeholder="Ej: azul marino, dorado, blanco y negro, o los colores de tu logo (#001122)">
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────
+         PASO 7 · TIEMPOS Y PRESUPUESTO
+    ───────────────────────────────────────── -->
+    <section class="step hidden" data-step="7">
+      <div class="mb-8">
+        <span class="step-number">07 / 08</span>
+        <h1 class="step-title">Tiempos<br>y presu-<br>puesto</h1>
+        <p class="step-subtitle">Nos ayuda a priorizar y asignarte el equipo adecuado.</p>
+      </div>
+
+      <div class="space-y-7">
+
+        <!-- Fechas -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="form-group">
+            <label class="field-label" for="fechaInicio">¿Cuándo quieres iniciar?</label>
+            <input class="field-input" type="date" id="fechaInicio" data-field="fechaInicio">
+          </div>
+          <div class="form-group">
+            <label class="field-label" for="fechaLimite">Fecha límite de entrega</label>
+            <input class="field-input" type="date" id="fechaLimite" data-field="fechaLimite">
+          </div>
+        </div>
+
+        <!-- Urgencia -->
+        <div>
+          <label class="field-label block mb-3">Nivel de urgencia</label>
+          <div class="toggle-group" data-group="urgencia">
+            <button type="button" class="toggle-pill" data-value="urgencia_flexible">
+              Sin prisa · Flexible
+            </button>
+            <button type="button" class="toggle-pill" data-value="urgencia_normal">
+              Normal
+            </button>
+            <button type="button" class="toggle-pill" data-value="urgencia_urgente">
+              Urgente
+            </button>
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- Presupuesto -->
+        <div>
+          <label class="field-label block mb-3">Presupuesto aproximado (USD) *</label>
+          <div class="budget-grid" data-group="presupuesto">
+
+            <div class="budget-card" data-value="menos-1500">
+              <div class="budget-label">Menos de $1,500</div>
+              <div class="budget-sub">Proyectos pequeños o landing pages</div>
+            </div>
+
+            <div class="budget-card" data-value="1500-4000">
+              <div class="budget-label">$1,500 – $4,000</div>
+              <div class="budget-sub">Sitios informativos o corporativos</div>
+            </div>
+
+            <div class="budget-card" data-value="4000-10000">
+              <div class="budget-label">$4,000 – $10,000</div>
+              <div class="budget-sub">E-commerce o sitios con funcionalidades</div>
+            </div>
+
+            <div class="budget-card" data-value="10000-25000">
+              <div class="budget-label">$10,000 – $25,000</div>
+              <div class="budget-sub">Plataformas o proyectos complejos</div>
+            </div>
+
+            <div class="budget-card" data-value="mas-25000">
+              <div class="budget-label">Más de $25,000</div>
+              <div class="budget-sub">Proyectos de gran escala o SaaS</div>
+            </div>
+
+            <div class="budget-card" data-value="a-discutir">
+              <div class="budget-label">Prefiero discutirlo</div>
+              <div class="budget-sub">Lo definimos en una reunión</div>
+            </div>
+
+          </div>
+          <p class="text-xs text-[#444] mt-3">* Los rangos son referenciales. La cotización final depende del alcance definido.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────
+         PASO 8 · RESUMEN Y ENVÍO
+    ───────────────────────────────────────── -->
+    <section class="step hidden" data-step="8">
+      <div class="mb-8">
+        <span class="step-number">08 / 08</span>
+        <h1 class="step-title">Revisa<br>tu brief</h1>
+        <p class="step-subtitle">Confirma que todo esté correcto antes de enviarlo.</p>
+      </div>
+
+      <!-- Summary (generated by JS) -->
+      <div id="summary-content" class="mb-8"></div>
+
+      <hr class="section-divider">
+
+      <!-- Campos finales -->
+      <div class="space-y-5 mb-8">
+        <div class="form-group">
+          <label class="field-label" for="comoLlegaste">¿Cómo llegaste a Geniorama?</label>
+          <select class="field-select" id="comoLlegaste" data-field="comoLlegaste">
+            <option value="">Selecciona una opción</option>
+            <option value="ref_redes">Redes sociales (Instagram, LinkedIn…)</option>
+            <option value="ref_recomendado">Alguien me lo recomendó</option>
+            <option value="ref_google">Búsqueda en Google</option>
+            <option value="ref_trabaje">Ya trabajé con Geniorama antes</option>
+            <option value="ref_evento">Evento o conferencia</option>
+            <option value="ref_otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="infoAdicional">¿Algo más que debamos saber?</label>
+          <textarea class="field-textarea" id="infoAdicional" data-field="infoAdicional" rows="4"
+                    placeholder="Cualquier detalle adicional, restricción técnica, integración especial o contexto relevante…"></textarea>
+        </div>
+      </div>
+
+      <!-- Nota de envío -->
+      <div class="bg-[#06124e] border border-[#0b1558] rounded-xl p-4 mb-6 text-sm text-[#6b7280] leading-relaxed">
+        Al enviar este formulario, el equipo de Geniorama revisará tu brief y se pondrá en contacto contigo
+        en un plazo de <strong class="text-[#9ca3af]">1 – 2 días hábiles</strong> para agendar una reunión
+        de descubrimiento y presentarte una propuesta.
+      </div>
+
+    </section>
+
+  </div>
+  <!-- /form-wrapper -->
+
+
+  <!-- ─────────────────────────────────────────
+       PANTALLA DE ÉXITO
+  ───────────────────────────────────────── -->
+  <div id="success-screen">
+    <div class="success-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M5 13L9 17L19 7" stroke="#e41279" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <h2 class="step-title mb-4 text-center" style="font-size:clamp(2rem,6vw,3rem)">
+      ¡Brief<br>recibido!
+    </h2>
+
+    <p class="text-[#9ca3af] max-w-sm mx-auto mb-8 text-center leading-relaxed">
+      Gracias por tomarte el tiempo de completarlo. El equipo de
+      <span class="text-white">Geniorama</span> revisará tu proyecto y te
+      contactará en <strong class="text-white">1 – 2 días hábiles</strong>.
+    </p>
+
+    <a href="https://geniorama.co"
+       class="btn-primary inline-block no-underline">
+      Volver a Geniorama.co
+    </a>
+  </div>
+
+</main>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  NAVEGACIÓN FIJA INFERIOR                ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<nav id="bottom-nav" class="fixed bottom-0 inset-x-0 z-50 bg-[#000a3d]/95 backdrop-blur-sm border-t border-[#0b1558]">
+  <div class="max-w-2xl mx-auto px-5 py-3.5 flex items-center justify-between gap-4">
+
+    <button id="btn-prev" class="btn-secondary" disabled>
+      ← Anterior
+    </button>
+
+    <div id="step-dots" class="flex items-center gap-1.5 flex-shrink-0"></div>
+
+    <button id="btn-next" class="btn-primary">
+      Siguiente →
+    </button>
+
+    <button id="btn-submit" class="btn-primary hidden">
+      Enviar Brief →
+    </button>
+
+  </div>
+</nav>
+
+
+<script type="module" src="assets/js/brief-web.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>
