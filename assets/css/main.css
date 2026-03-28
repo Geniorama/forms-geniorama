@@ -439,6 +439,68 @@ body {
   margin: 1.75rem 0;
 }
 
+/* ── MOBILE ──────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  /* Typography */
+  .step-title {
+    font-size: clamp(2rem, 10.5vw, 2.8rem);
+  }
+
+  .step-subtitle {
+    font-size: 0.9375rem;
+  }
+
+  /* Form inputs — larger touch targets */
+  .field-input,
+  .field-textarea,
+  .field-select {
+    padding: 0.875rem 0.875rem;
+    font-size: 1rem; /* prevents iOS zoom on focus */
+  }
+
+  /* Cards grid — single column */
+  .cards-grid,
+  .budget-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Toggle pills — slightly smaller */
+  .toggle-pill {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  /* Check items — ensure 44px min touch target */
+  .check-item {
+    padding: 0.875rem 0.875rem;
+    min-height: 44px;
+  }
+
+  /* Select cards */
+  .select-card {
+    padding: 1rem;
+  }
+
+  /* Budget cards */
+  .budget-card {
+    padding: 0.875rem 1rem;
+    min-height: 44px;
+  }
+
+  /* Buttons — full-width text centering */
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.8125rem 1rem;
+    font-size: 0.9375rem;
+    text-align: center;
+  }
+
+  /* Summary rows */
+  .summary-row {
+    padding: 0.625rem 0.875rem;
+  }
+}
+
 /* ── PRINT / PDF ─────────────────────────────────────────── */
 @media print {
   header, nav { display: none !important; }
