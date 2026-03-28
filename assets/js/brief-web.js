@@ -82,7 +82,7 @@ const LABELS = {
   urgencia_normal:   'Normal',
   urgencia_urgente:  'Urgente',
   // Presupuesto
-  'menos-1500':  'Menos de $1,500 USD',
+  '600-1500':    '$600 – $1,500 USD',
   '1500-4000':   '$1,500 – $4,000 USD',
   '4000-10000':  '$4,000 – $10,000 USD',
   '10000-25000': '$10,000 – $25,000 USD',
