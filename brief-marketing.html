@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brief · Marketing Estratégico — Geniorama</title>
+  <meta name="description" content="Cuéntanos sobre tu negocio y tus objetivos de marketing. Completa este brief para que podamos diseñar una estrategia a tu medida.">
+  <meta name="robots" content="noindex">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { pink: '#e41279' } } } }
+  </script>
+
+  <!-- Brand CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <style>
+    /* ── Componentes específicos del brief de marketing ── */
+    .field-hint {
+      font-size: 0.83rem;
+      color: #6b7280;
+      margin-bottom: 0.875rem;
+      line-height: 1.55;
+    }
+
+    .field-textarea-sm { min-height: 80px !important; }
+
+    /* Ejemplo bueno/malo */
+    .ex-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.625rem;
+      margin-bottom: 0.875rem;
+    }
+    @media (max-width: 600px) { .ex-pair { grid-template-columns: 1fr; } }
+
+    .ex-bad, .ex-good {
+      padding: 0.875rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+    .ex-bad  { background: rgba(239,68,68,0.06);  border: 1px solid rgba(239,68,68,0.2);  }
+    .ex-good { background: rgba(52,211,153,0.06); border: 1px solid rgba(52,211,153,0.2); }
+    .ex-tag  { font-weight: 700; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.25rem; }
+    .ex-bad  .ex-tag { color: #f87171; }
+    .ex-good .ex-tag { color: #34d399; }
+
+    /* Tip box */
+    .tip-box {
+      background: rgba(228,18,121,0.05);
+      border: 1px solid rgba(228,18,121,0.18);
+      border-radius: 8px;
+      padding: 0.875rem 1rem;
+      margin-bottom: 0.875rem;
+      font-size: 0.83rem;
+      color: #9ca3af;
+      line-height: 1.55;
+    }
+
+    /* Check-items 2 columnas */
+    .check-items-2col {
+      display: grid !important;
+      flex-direction: unset !important;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+    @media (max-width: 600px) { .check-items-2col { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  HEADER FIJO                             ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<header class="fixed top-0 inset-x-0 z-50 bg-[#000a3d]/95 backdrop-blur-sm border-b border-[#0b1558]">
+  <div class="max-w-2xl mx-auto px-4 sm:px-5 py-3 sm:py-3.5 flex items-center justify-between">
+
+    <div class="flex items-center gap-3">
+    <svg xmlns="http://www.w3.org/2000/svg" width="130" height="21" viewBox="0 0 192.825 31.11" aria-label="Geniorama" role="img">
+      <defs><clipPath id="gclip"><path style="fill:#fff" d="M0 0h192.825v31.109H0z"/></clipPath></defs>
+      <path d="M1.381 15.555 15.555 1.381l14.173 14.174-14.173 14.174zM15.555 0 0 15.555l15.555 15.554 15.554-15.554z" style="fill:#fff"/>
+      <path d="M24.659 35.757 13.525 24.614 24.6 13.54l1.933 1.933-9.141 9.141 9.2 9.21z" transform="translate(-9.049 -9.059)" style="fill:#fff"/>
+      <path d="m55.514 40.257-1.943-1.923 5.051-5.1-4.922-4.992 1.929-1.9 6.893 6.913z" transform="translate(-35.843 -17.623)" style="fill:#fff"/>
+      <path transform="rotate(-45 25.068 -7.41)" style="fill:#fff" d="M0 0h4.204v4.204H0z"/>
+      <g style="clip-path:url(#gclip)">
+        <path d="M117.642 29.97H125v8.336h-2.492v-2.152a6.369 6.369 0 0 1-5.346 2.447 7.977 7.977 0 0 1-8-8.223 8.055 8.055 0 0 1 8.223-8.224 7.747 7.747 0 0 1 7.611 5.5h-2.764a5.119 5.119 0 0 0-4.848-2.968 5.43 5.43 0 0 0-5.618 5.686 5.5 5.5 0 0 0 5.618 5.8c2.628 0 4.78-1.359 5.006-3.874h-4.757z" transform="translate(-73.043 -14.823)" style="fill:#fff"/>
+        <path d="M185.409 36.41v2.49h-9.288V23.044h9.179v2.492h-6.57v4.123h6v2.447h-6v4.3z" transform="translate(-117.838 -15.418)" style="fill:#fff"/>
+        <path d="M233.245 23.044V38.9h-2.039l-6.683-10.76V38.9h-2.605V23.044h2.039L230.64 33.8V23.044z" transform="translate(-148.479 -15.418)" style="fill:#fff"/>
+        <path transform="translate(91.426 7.626)" style="fill:#fff" d="M0 0h2.605v15.857H0z"/>
+        <path d="M301.875 30.378A8.223 8.223 0 1 1 310.1 38.6a8.165 8.165 0 0 1-8.223-8.223m13.841 0a5.619 5.619 0 1 0-5.618 5.686 5.535 5.535 0 0 0 5.618-5.686" transform="translate(-201.976 -14.823)" style="fill:#fff"/>
+        <path d="M374.379 33.126h-2.469V38.9h-2.61V23.045h5.89a5.036 5.036 0 0 1 1.971 9.7l5.165 6.162h-3.1zm-2.469-2.333h3.285a2.655 2.655 0 0 0 0-5.3h-3.285z" transform="translate(-247.092 -15.419)" style="fill:#fff"/>
+        <path d="M429.013 35.707h-6.592l-1.064 3.193h-2.832l5.64-15.857h3.126L432.91 38.9h-2.81zm-.838-2.447-2.447-7.249-2.469 7.249z" transform="translate(-280.024 -15.418)" style="fill:#fff"/>
+        <path d="M492.849 38.9h-2.605V27.348l-3.965 8.952h-2.039l-3.964-8.948V38.9h-2.605V23.044h3.035l4.554 10.239 4.553-10.239h3.036z" transform="translate(-319.597 -15.418)" style="fill:#fff"/>
+        <path d="M549.7 35.707h-6.59l-1.065 3.193h-2.832l5.641-15.857h3.126L553.6 38.9h-2.809zm-.838-2.447-2.446-7.249-2.469 7.249z" transform="translate(-360.773 -15.418)" style="fill:#fff"/>
+      </g>
+    </svg>
+    <span class="brief-type-badge">Marketing</span>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <span id="step-indicator" class="text-xs text-[#555] font-mono tracking-wide">Paso 1 de 8</span>
+      <button id="btn-reset" class="text-xs text-[#444] hover:text-[#e41279] transition-colors duration-150">
+        Reiniciar
+      </button>
+    </div>
+  </div>
+  <div class="h-px bg-[#0b1558]">
+    <div id="progress-bar" class="progress-bar" style="width:12.5%"></div>
+  </div>
+</header>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  CONTENIDO PRINCIPAL                     ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<main class="max-w-2xl mx-auto px-4 sm:px-5 pt-20 sm:pt-24 pb-32 sm:pb-36">
+
+  <div id="form-wrapper">
+
+    <!-- ─────────────────────────────────────────
+         PASO 1 · CONTACTO
+    ───────────────────────────────────────── -->
+    <section class="step" data-step="1">
+      <div class="mb-8">
+        <span class="step-number">01 / 08</span>
+        <h1 class="step-title">Hola,<br>cuéntanos<br>sobre ti</h1>
+        <p class="step-subtitle">Necesitamos algunos datos para ponernos en contacto.</p>
+      </div>
+
+      <div class="space-y-5">
+        <div class="form-group">
+          <label class="field-label" for="nombre">Nombre completo *</label>
+          <input class="field-input" type="text" id="nombre" data-field="nombre"
+                 placeholder="Tu nombre y apellido" autocomplete="name">
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="empresa">Empresa / Marca *</label>
+          <input class="field-input" type="text" id="empresa" data-field="empresa"
+                 placeholder="Nombre de tu empresa o proyecto" autocomplete="organization">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="form-group">
+            <label class="field-label" for="email">Email *</label>
+            <input class="field-input" type="email" id="email" data-field="email"
+                   placeholder="tu@correo.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label class="field-label" for="telefono">Teléfono / WhatsApp</label>
+            <input class="field-input" type="tel" id="telefono" data-field="telefono"
+                   placeholder="+57 300 000 0000" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="form-group">
+            <label class="field-label" for="pais">País</label>
+            <input class="field-input" type="text" id="pais" data-field="pais"
+                   placeholder="Colombia, USA, México…" autocomplete="country-name">
+          </div>
+          <div class="form-group">
+            <label class="field-label" for="ciudad">Ciudad</label>
+            <input class="field-input" type="text" id="ciudad" data-field="ciudad"
+                   placeholder="Bogotá, Miami, CDMX…" autocomplete="address-level2">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────
+         PASO 2 · EL NEGOCIO
+    ───────────────────────────────────────── -->
+    <section class="step hidden" data-step="2">
+      <div class="mb-8">
+        <span class="step-number">02 / 08</span>
+        <h1 class="step-title">Tu negocio<br>en concreto</h1>
+        <p class="step-subtitle">Necesitamos entender qué haces, no cómo suena en tu brochure corporativo.</p>
+      </div>
+
+      <div class="space-y-7">
+
+        <div class="form-group">
+          <label class="field-label" for="negocio">¿A qué se dedica tu empresa? *</label>
+          <p class="field-hint">Explícalo como se lo dirías a un amigo en 30 segundos. Sin jerga corporativa.</p>
+          <div class="ex-pair">
+            <div class="ex-bad">
+              <div class="ex-tag">✗ No nos sirve</div>
+              "Somos una empresa líder en soluciones integrales para el sector empresarial."
+            </div>
+            <div class="ex-good">
+              <div class="ex-tag">✓ Esto sí</div>
+              "Vendemos [producto] a [tipo de cliente] en [ciudad]. Nos contactan por [canal] y cerramos en [tiempo]."
+            </div>
+          </div>
+          <textarea class="field-textarea" id="negocio" data-field="negocio"
+                    placeholder="Qué hacen + para quién + en dónde + cómo te contactan"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="productos">Productos o servicios principales *</label>
+          <p class="field-hint">Los 3 a 5 que más te importa vender, con precio o rango de precio.</p>
+          <textarea class="field-textarea" id="productos" data-field="productos"
+                    placeholder="1. [Servicio/producto] — [rango de precio]&#10;2. [Servicio/producto] — [rango de precio]&#10;3. [Servicio/producto] — [rango de precio]"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="modelo">¿Cómo se genera una venta en tu negocio? *</label>
+          <p class="field-hint">¿Te contactan, cotizas, cierras por WhatsApp, pagan con transferencia? ¿Cuánto tiempo toma desde el primer contacto hasta el pago?</p>
+          <textarea class="field-textarea" id="modelo" data-field="modelo"
+                    placeholder="Ej: El cliente nos encuentra por [canal], nos escribe por [WhatsApp/formulario], le enviamos cotización en [X tiempo], cierra en [X días], paga con [método]."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="ubicacion">¿Tienes punto físico o solo operas digital?</label>
+          <textarea class="field-textarea field-textarea-sm" id="ubicacion" data-field="ubicacion"
+                    placeholder="Describe dónde operas: local, oficina, solo digital, domicilio, cobertura geográfica…"></textarea>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────
+         PASO 3 · EL CLIENTE
+    ───────────────────────────────────────── -->
+    <section class="step hidden" data-step="3">
+      <div class="mb-8">
+        <span class="step-number">03 / 08</span>
+        <h1 class="step-title">¿A quién<br>le vendes<br>realmente?</h1>
+        <p class="step-subtitle">Si tu respuesta es "a todo el mundo", necesitamos que pienses de nuevo. Todo el mundo no te compra.</p>
+      </div>
+
+      <div class="space-y-7">
+
+        <div class="form-group">
+          <label class="field-label" for="clienteIdeal">Describe a tu mejor cliente *</label>
+          <p class="field-hint">Piensa en alguien REAL que ya te compró y que ojalá se clonara. No un perfil demográfico — una persona.</p>
+          <div class="ex-pair">
+            <div class="ex-bad">
+              <div class="ex-tag">✗ No nos sirve</div>
+              "Hombres y mujeres de 25 a 55 años, NSE medio-alto, interesados en calidad."
+            </div>
+            <div class="ex-good">
+              <div class="ex-tag">✓ Esto sí</div>
+              "[Nombre], [edad], [a qué se dedica]. Tenía [problema concreto]. Nos encontró por [canal] y tardó [tiempo] en decidirse."
+            </div>
+          </div>
+          <textarea class="field-textarea" id="clienteIdeal" data-field="clienteIdeal"
+                    placeholder="Describe una persona real: nombre, edad, qué hace, cuál era su problema, cómo llegó a ti, por qué te eligió."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="dolor">¿Qué problema urgente tiene cuando te busca? *</label>
+          <p class="field-hint">No una "necesidad" abstracta. ¿Qué le está doliendo, frustrando o costando dinero HOY?</p>
+          <textarea class="field-textarea" id="dolor" data-field="dolor"
+                    placeholder="Describe la situación real: qué le está pasando, qué ya intentó, por qué no puede esperar más."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="objeciones">¿Qué objeciones te ponen antes de comprar? *</label>
+          <div class="tip-box">
+            Las objeciones más comunes: precio ("está caro"), confianza ("¿cómo sé que cumplen?"), tiempo ("ahora no puedo"), comparación ("voy a pedir otras cotizaciones"). ¿Cuáles escuchas tú?
+          </div>
+          <textarea class="field-textarea" id="objeciones" data-field="objeciones"
+                    placeholder="Lista 3 a 5 objeciones reales que escuchas de clientes potenciales."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="antiCliente">¿Hay alguien a quien no quieres venderle?</label>
+          <p class="field-hint">Ese cliente que pide mucho, paga poco, se queja de todo, o no es rentable.</p>
+          <textarea class="field-textarea field-textarea-sm" id="antiCliente" data-field="antiCliente"
+                    placeholder="Describe el perfil de cliente que prefieres evitar y por qué."></textarea>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────
+         PASO 4 · COMPETENCIA
+    ───────────────────────────────────────── -->
+    <section class="step hidden" data-step="4">
+      <div class="mb-8">
+        <span class="step-number">04 / 08</span>
+        <h1 class="step-title">Tu competencia<br>y tu mercado</h1>
+        <p class="step-subtitle">Si dices que no tienes competencia, lo que tienes es un problema de visión.</p>
+      </div>
+
+      <div class="space-y-7">
+
+        <div class="form-group">
+          <label class="field-label" for="competencia">Nombra 3 competidores directos *</label>
+          <p class="field-hint">Para cada uno: qué hacen bien y qué hacen mal. Si no sabes nombres exactos, describe el tipo de competidor.</p>
+          <textarea class="field-textarea" id="competencia" data-field="competencia"
+                    placeholder="1. [Nombre o descripción] — Lo bueno: … Lo malo: …&#10;2. [Nombre o descripción] — Lo bueno: … Lo malo: …&#10;3. [Nombre o descripción] — Lo bueno: … Lo malo: …"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="razonElegir">Cuando te eligen a ti, ¿qué dicen que los convenció? *</label>
+          <p class="field-hint">No lo que crees tú. Lo que te han DICHO clientes reales.</p>
+          <div class="ex-pair">
+            <div class="ex-bad">
+              <div class="ex-tag">✗ Genérico</div>
+              "Nos eligen por nuestra calidad y buen servicio."
+            </div>
+            <div class="ex-good">
+              <div class="ex-tag">✓ Específico</div>
+              "'Fueron los únicos que me respondieron rápido y me explicaron todo claro, sin rodeos.'"
+            </div>
+          </div>
+          <textarea class="field-textarea" id="razonElegir" data-field="razonElegir"
+                    placeholder="Recuerda frases literales que te hayan dicho clientes satisfechos."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="preciosComp">¿Cómo están tus precios vs la competencia?</label>
+          <textarea class="field-textarea field-textarea-sm" id="preciosComp" data-field="preciosComp"
+                    placeholder="¿Estás por encima, por debajo o igual? ¿Incluyes algo que ellos cobran aparte?"></textarea>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────
+         PASO 5 · DIFERENCIAL
+    ───────────────────────────────────────── -->
+    <section class="step hidden" data-step="5">
+      <div class="mb-8">
+        <span class="step-number">05 / 08</span>
+        <h1 class="step-title">¿Qué te hace<br>diferente<br>de verdad?</h1>
+        <p class="step-subtitle">Calidad, servicio y experiencia no son diferenciales — son lo mínimo. Si tu competidor puede decir exactamente lo mismo, no es un diferencial.</p>
+      </div>
+
+      <div class="space-y-7">
+
+        <div class="form-group">
+          <label class="field-label" for="diferencial">Completa: "Somos los únicos que ___" *</label>
+          <p class="field-hint">Si no puedes completarla, no tienes un diferencial claro todavía. Eso no es grave — lo construimos juntos. Pero necesitamos saberlo.</p>
+          <div class="ex-pair">
+            <div class="ex-bad">
+              <div class="ex-tag">✗ No es diferencial</div>
+              "Somos los únicos que ofrecemos calidad y buen precio." — Eso lo dice TODO el mundo.
+            </div>
+            <div class="ex-good">
+              <div class="ex-tag">✓ Sí es diferencial</div>
+              "Somos los únicos que [hacemos algo concreto y verificable que la competencia no hace]."
+            </div>
+          </div>
+          <textarea class="field-textarea" id="diferencial" data-field="diferencial"
+                    placeholder="Somos los únicos que…&#10;&#10;Si no se te ocurre nada, escribe 'No tengo claro mi diferencial' — eso también nos sirve."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="fortaleza">¿Qué haces mejor que nadie? (con pruebas) *</label>
+          <p class="field-hint">No basta con creerlo. ¿Tienes reviews, datos, testimonios, números que lo demuestren?</p>
+          <textarea class="field-textarea" id="fortaleza" data-field="fortaleza"
+                    placeholder="Ej: Tenemos X reviews con X estrellas. Llevamos X años sin una queja de [esto]. Nuestro tiempo de respuesta es de [X minutos]."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="debilidad">Ahora sé honesto: ¿qué haces mal o qué te falta? *</label>
+          <p class="field-hint">Esto no es para juzgarte. Es para no prometer algo que no puedes cumplir y para identificar oportunidades reales.</p>
+          <textarea class="field-textarea" id="debilidad" data-field="debilidad"
+                    placeholder="Sé brutalmente honesto: ¿qué te da pereza admitir? ¿En qué te han quejado? ¿Qué sabes que deberías mejorar?"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="personalidad">Si tu marca fuera una persona, ¿cómo sería?</label>
+          <p class="field-hint">¿Seria y ejecutiva? ¿Cercana y descomplicada? ¿Técnica y precisa? ¿Joven y atrevida? Piensa en alguien real o un personaje que se le parezca.</p>
+          <textarea class="field-textarea field-textarea-sm" id="personalidad" data-field="personalidad"
+                    placeholder="Describe la personalidad como si fuera alguien que conoces: tono de voz, actitud, cómo se viste, cómo habla."></textarea>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────
+         PASO 6 · ESTADO DIGITAL
+    ───────────────────────────────────────── -->
+    <section class="step hidden" data-step="6">
+      <div class="mb-8">
+        <span class="step-number">06 / 08</span>
+        <h1 class="step-title">Tu estado<br>digital<br>actual</h1>
+        <p class="step-subtitle">Necesitamos saber con qué arrancamos. Si no tienes nada, lo construimos desde cero.</p>
+      </div>
+
+      <div class="space-y-7">
+
+        <!-- Canales activos -->
+        <div>
+          <label class="field-label block mb-3">¿Qué canales tienes activos hoy?</label>
+          <div class="check-items check-items-2col" data-group="canales">
+
+            <div class="check-item" data-value="web">
+              <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="check-label">Página web</div></div>
+            </div>
+
+            <div class="check-item" data-value="ig">
+              <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="check-label">Instagram</div></div>
+            </div>
+
+            <div class="check-item" data-value="fb">
+              <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="check-label">Facebook</div></div>
+            </div>
+
+            <div class="check-item" data-value="tiktok">
+              <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="check-label">TikTok</div></div>
+            </div>
+
+            <div class="check-item" data-value="yt">
+              <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="check-label">YouTube</div></div>
+            </div>
+
+            <div class="check-item" data-value="linkedin">
+              <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="check-label">LinkedIn</div></div>
+            </div>
+
+            <div class="check-item" data-value="gm">
+              <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="check-label">Google Maps / Perfil de Negocio</div></div>
+            </div>
+
+            <div class="check-item" data-value="wa">
+              <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="check-label">WhatsApp Business</div></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- URLs -->
+        <div>
+          <label class="field-label block mb-3">Links de tu web y redes</label>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="form-group">
+              <label class="field-label" style="font-size:0.72rem">Sitio web</label>
+              <input class="field-input" type="url" id="urlWeb" data-field="urlWeb" placeholder="https://">
+            </div>
+            <div class="form-group">
+              <label class="field-label" style="font-size:0.72rem">Instagram</label>
+              <input class="field-input" type="url" id="urlIg" data-field="urlIg" placeholder="https://instagram.com/…">
+            </div>
+            <div class="form-group">
+              <label class="field-label" style="font-size:0.72rem">Facebook</label>
+              <input class="field-input" type="url" id="urlFb" data-field="urlFb" placeholder="https://facebook.com/…">
+            </div>
+            <div class="form-group">
+              <label class="field-label" style="font-size:0.72rem">Otro (TikTok, YouTube…)</label>
+              <input class="field-input" type="url" id="urlOtro" data-field="urlOtro" placeholder="https://…">
+            </div>
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- Pauta previa -->
+        <div class="form-group">
+          <label class="field-label" for="pautaPrevia">¿Has invertido en publicidad digital antes?</label>
+          <p class="field-hint">Si sí: qué hiciste, cuánto invertiste, qué resultados tuviste. Si no: dilo y ya.</p>
+          <textarea class="field-textarea" id="pautaPrevia" data-field="pautaPrevia"
+                    placeholder="Plataforma, presupuesto, duración, qué pasó. O simplemente: 'Nunca he invertido en publicidad digital'."></textarea>
+        </div>
+
+        <!-- Rating digital -->
+        <div>
+          <label class="field-label block mb-3">Del 1 al 10, ¿qué tan satisfecho estás con tu presencia digital?</label>
+          <div class="toggle-group" data-group="ratingDigital">
+            <button type="button" class="toggle-pill" data-value="1">1</button>
+            <button type="button" class="toggle-pill" data-value="2">2</button>
+            <button type="button" class="toggle-pill" data-value="3">3</button>
+            <button type="button" class="toggle-pill" data-value="4">4</button>
+            <button type="button" class="toggle-pill" data-value="5">5</button>
+            <button type="button" class="toggle-pill" data-value="6">6</button>
+            <button type="button" class="toggle-pill" data-value="7">7</button>
+            <button type="button" class="toggle-pill" data-value="8">8</button>
+            <button type="button" class="toggle-pill" data-value="9">9</button>
+            <button type="button" class="toggle-pill" data-value="10">10</button>
+          </div>
+          <div class="flex justify-between mt-2 text-xs text-[#555]">
+            <span>Desastre total</span>
+            <span>Estoy conforme</span>
+          </div>
+        </div>
+
+        <!-- Frustración -->
+        <div class="form-group">
+          <label class="field-label" for="frustracion">¿Qué te frustra más de tu presencia digital?</label>
+          <textarea class="field-textarea field-textarea-sm" id="frustracion" data-field="frustracion"
+                    placeholder="Lo que más te molesta, lo que sientes que no funciona, lo que te quita el sueño."></textarea>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────
+         PASO 7 · OBJETIVOS
+    ───────────────────────────────────────── -->
+    <section class="step hidden" data-step="7">
+      <div class="mb-8">
+        <span class="step-number">07 / 08</span>
+        <h1 class="step-title">¿Qué esperas<br>lograr?</h1>
+        <p class="step-subtitle">"Más ventas" no es un objetivo — es un deseo. Necesitamos algo concreto.</p>
+      </div>
+
+      <div class="space-y-7">
+
+        <div class="form-group">
+          <label class="field-label" for="objetivo">El resultado #1 que esperas de este trabajo *</label>
+          <p class="field-hint">Escoge UNO. No tres. El más importante.</p>
+          <div class="ex-pair">
+            <div class="ex-bad">
+              <div class="ex-tag">✗ Deseo vago</div>
+              "Quiero más ventas, más seguidores, mejor marca, presencia digital y posicionamiento."
+            </div>
+            <div class="ex-good">
+              <div class="ex-tag">✓ Objetivo concreto</div>
+              "Necesito recibir al menos [X] solicitudes al mes por [canal] de personas que realmente estén interesadas."
+            </div>
+          </div>
+          <textarea class="field-textarea" id="objetivo" data-field="objetivo"
+                    placeholder="Un objetivo. Concreto. Con número si es posible, canal y plazo."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="plazo">¿En cuánto tiempo esperas ver resultados?</label>
+          <textarea class="field-textarea field-textarea-sm" id="plazo" data-field="plazo"
+                    placeholder="Sé honesto con tu expectativa. No hay respuesta incorrecta, pero necesitamos calibrar."></textarea>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="form-group">
+          <label class="field-label" for="presupuesto">Presupuesto mensual para publicidad *</label>
+          <div class="tip-box">
+            Solo pauta, sin fee de agencia. El que realmente puedes comprometer por al menos 3 meses seguidos.<br>
+            <strong class="text-[#e41279]">Referencia:</strong> Colombia $1.5M–$3M COP/mes mínimo · USA $1,000–$2,000 USD/mes mínimo.
+          </div>
+          <input class="field-input" type="text" id="presupuesto" data-field="presupuesto"
+                 placeholder="Ej: $3,000,000 COP / mes  ·  $2,000 USD / mes">
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="experienciaPrevia">¿Alguna mala experiencia con agencias o freelancers?</label>
+          <p class="field-hint">Cuéntanos qué pasó para no repetir los mismos errores.</p>
+          <textarea class="field-textarea" id="experienciaPrevia" data-field="experienciaPrevia"
+                    placeholder="Si tuviste mala experiencia: qué se hizo, qué salió mal, qué esperabas. Si es tu primera vez, dilo."></textarea>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ─────────────────────────────────────────
+         PASO 8 · REFERENCIAS Y ÚLTIMOS DETALLES
+    ───────────────────────────────────────── -->
+    <section class="step hidden" data-step="8">
+      <div class="mb-8">
+        <span class="step-number">08 / 08</span>
+        <h1 class="step-title">Referencias<br>y últimos<br>detalles</h1>
+        <p class="step-subtitle">Mostrar es mejor que describir. Si hay algo que te gusta o que odias, este es el momento.</p>
+      </div>
+
+      <div class="space-y-7">
+
+        <div class="form-group">
+          <label class="field-label" for="referencias">Marcas o cuentas cuyo estilo te gusta</label>
+          <p class="field-hint">No tienen que ser de tu industria. Pega links o nombres — nos dicen más que cualquier descripción.</p>
+          <textarea class="field-textarea" id="referencias" data-field="referencias"
+                    placeholder="Links de Instagram, TikTok, páginas web o marcas que admiras por su estilo de comunicación."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="antireferencias">¿Qué odias en publicidad o redes? ¿Qué no hagamos jamás?</label>
+          <textarea class="field-textarea field-textarea-sm" id="antireferencias" data-field="antireferencias"
+                    placeholder="Todo lo que detestas: un estilo visual, un tono, una práctica, un tipo de contenido…"></textarea>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- Materiales -->
+        <div>
+          <label class="field-label block mb-3">¿Con qué material visual cuentas?</label>
+          <div class="check-items check-items-2col" data-group="materiales">
+
+            <div class="check-item" data-value="logo">
+              <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="check-label">Logo en buena calidad</div></div>
+            </div>
+
+            <div class="check-item" data-value="manual">
+              <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="check-label">Manual o guía de marca</div></div>
+            </div>
+
+            <div class="check-item" data-value="fotos_prod">
+              <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="check-label">Fotos de producto/servicio</div></div>
+            </div>
+
+            <div class="check-item" data-value="fotos_equipo">
+              <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="check-label">Fotos del equipo</div></div>
+            </div>
+
+            <div class="check-item" data-value="videos">
+              <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="check-label">Videos previos</div></div>
+            </div>
+
+            <div class="check-item" data-value="testimonios">
+              <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="check-label">Testimonios de clientes</div></div>
+            </div>
+
+            <div class="check-item" data-value="casos">
+              <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="check-label">Antes/después o casos de éxito</div></div>
+            </div>
+
+            <div class="check-item" data-value="nada">
+              <div class="check-box"><svg width="11" height="8" viewBox="0 0 11 8" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div><div class="check-label">No tengo nada aún</div></div>
+            </div>
+
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="form-group">
+          <label class="field-label" for="decisor">¿Quién toma las decisiones y quién será nuestro contacto? *</label>
+          <p class="field-hint">Esto nos evita el clásico "déjame consultarlo con mi socio" que atrasa todo 2 semanas.</p>
+          <textarea class="field-textarea field-textarea-sm" id="decisor" data-field="decisor"
+                    placeholder="Quién decide, quién aprueba contenido, quién es el contacto directo día a día."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label" for="adicional">¿Algo más que debamos saber?</label>
+          <textarea class="field-textarea field-textarea-sm" id="adicional" data-field="adicional"
+                    placeholder="Cualquier contexto, historia, restricción o capricho que consideres relevante."></textarea>
+        </div>
+
+        <!-- Nota de envío -->
+        <div class="bg-[#06124e] border border-[#0b1558] rounded-xl p-4 text-sm text-[#6b7280] leading-relaxed">
+          Al enviar este brief, el equipo de <span class="text-white">Geniorama</span> lo revisará y se pondrá en contacto contigo
+          en un plazo de <strong class="text-[#9ca3af]">1 – 2 días hábiles</strong> para agendar una reunión de estrategia.
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+  <!-- /form-wrapper -->
+
+
+  <!-- ─────────────────────────────────────────
+       PANTALLA DE ÉXITO
+  ───────────────────────────────────────── -->
+  <div id="success-screen">
+    <div class="success-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M5 13L9 17L19 7" stroke="#e41279" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <h2 class="step-title mb-4 text-center" style="font-size:clamp(2rem,6vw,3rem)">
+      ¡Brief<br>recibido!
+    </h2>
+
+    <p class="text-[#9ca3af] max-w-sm mx-auto mb-8 text-center leading-relaxed">
+      Gracias por tomarte el tiempo de completarlo. El equipo de
+      <span class="text-white">Geniorama</span> revisará tu estrategia y te
+      contactará en <strong class="text-white">1 – 2 días hábiles</strong>.
+    </p>
+
+    <a href="https://geniorama.co"
+       class="btn-primary inline-block no-underline">
+      Volver a Geniorama.co
+    </a>
+  </div>
+
+</main>
+
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║  NAVEGACIÓN FIJA INFERIOR                ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<nav id="bottom-nav" class="fixed bottom-0 inset-x-0 z-50 bg-[#000a3d]/95 backdrop-blur-sm border-t border-[#0b1558]">
+  <div class="max-w-2xl mx-auto px-4 sm:px-5 py-3 sm:py-3.5 flex items-center justify-between gap-3">
+
+    <button id="btn-prev" class="btn-secondary flex-1 sm:flex-none" disabled>
+      ← Anterior
+    </button>
+
+    <div id="step-dots" class="hidden sm:flex items-center gap-1.5 flex-shrink-0"></div>
+
+    <button id="btn-next" class="btn-primary flex-1 sm:flex-none">
+      Siguiente →
+    </button>
+
+    <button id="btn-submit" class="btn-primary flex-1 sm:flex-none hidden">
+      Enviar Brief →
+    </button>
+
+  </div>
+</nav>
+
+
+<script type="module" src="assets/js/brief-marketing.js"></script>
+</body>
+</html>

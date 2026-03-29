@@ -343,6 +343,22 @@ body {
 .btn-secondary:hover:not(:disabled) { color: #e5e7eb; border-color: #1e32a0; }
 .btn-secondary:disabled { opacity: 0.3; cursor: not-allowed; }
 
+/* ── BRIEF TYPE BADGE ────────────────────────────────────── */
+.brief-type-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #e41279;
+  background: rgba(228, 18, 121, 0.08);
+  border: 1px solid rgba(228, 18, 121, 0.25);
+  padding: 0.2rem 0.65rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  font-family: 'Barlow', monospace;
+  flex-shrink: 0;
+}
+
 /* ── PROGRESS & STEP DOTS ────────────────────────────────── */
 .progress-bar {
   height: 2px;

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Briefs — Geniorama</title>
+  <meta name="robots" content="noindex">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { pink: '#e41279' } } } }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <style>
+    .brief-card {
+      background: #06124e;
+      border: 1.5px solid #122070;
+      border-radius: 16px;
+      padding: 2rem;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+    .brief-card:hover {
+      border-color: #e41279;
+      background: #0b1a6a;
+      transform: translateY(-2px);
+    }
+    .brief-card-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(228, 18, 121, 0.1);
+      border: 1px solid rgba(228, 18, 121, 0.25);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .brief-card-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #e41279;
+      margin-bottom: 0.5rem;
+      font-family: 'Barlow', monospace;
+    }
+    .brief-card-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1;
+      color: #fff;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    .brief-card-desc {
+      font-size: 0.875rem;
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .brief-card-steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+      margin-bottom: 1.75rem;
+    }
+    .brief-card-step-tag {
+      font-size: 0.72rem;
+      color: #6b7280;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid #0b1558;
+      border-radius: 100px;
+      padding: 0.2rem 0.6rem;
+    }
+    .brief-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #e41279;
+      transition: gap 0.2s;
+    }
+    .brief-card:hover .brief-card-cta { gap: 0.75rem; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="border-b border-[#0b1558]">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 py-4 flex items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" width="130" height="21" viewBox="0 0 192.825 31.11" aria-label="Geniorama" role="img">
+      <defs><clipPath id="gclip"><path style="fill:#fff" d="M0 0h192.825v31.109H0z"/></clipPath></defs>
+      <path d="M1.381 15.555 15.555 1.381l14.173 14.174-14.173 14.174zM15.555 0 0 15.555l15.555 15.554 15.554-15.554z" style="fill:#fff"/>
+      <path d="M24.659 35.757 13.525 24.614 24.6 13.54l1.933 1.933-9.141 9.141 9.2 9.21z" transform="translate(-9.049 -9.059)" style="fill:#fff"/>
+      <path d="m55.514 40.257-1.943-1.923 5.051-5.1-4.922-4.992 1.929-1.9 6.893 6.913z" transform="translate(-35.843 -17.623)" style="fill:#fff"/>
+      <path transform="rotate(-45 25.068 -7.41)" style="fill:#fff" d="M0 0h4.204v4.204H0z"/>
+      <g style="clip-path:url(#gclip)">
+        <path d="M117.642 29.97H125v8.336h-2.492v-2.152a6.369 6.369 0 0 1-5.346 2.447 7.977 7.977 0 0 1-8-8.223 8.055 8.055 0 0 1 8.223-8.224 7.747 7.747 0 0 1 7.611 5.5h-2.764a5.119 5.119 0 0 0-4.848-2.968 5.43 5.43 0 0 0-5.618 5.686 5.5 5.5 0 0 0 5.618 5.8c2.628 0 4.78-1.359 5.006-3.874h-4.757z" transform="translate(-73.043 -14.823)" style="fill:#fff"/>
+        <path d="M185.409 36.41v2.49h-9.288V23.044h9.179v2.492h-6.57v4.123h6v2.447h-6v4.3z" transform="translate(-117.838 -15.418)" style="fill:#fff"/>
+        <path d="M233.245 23.044V38.9h-2.039l-6.683-10.76V38.9h-2.605V23.044h2.039L230.64 33.8V23.044z" transform="translate(-148.479 -15.418)" style="fill:#fff"/>
+        <path transform="translate(91.426 7.626)" style="fill:#fff" d="M0 0h2.605v15.857H0z"/>
+        <path d="M301.875 30.378A8.223 8.223 0 1 1 310.1 38.6a8.165 8.165 0 0 1-8.223-8.223m13.841 0a5.619 5.619 0 1 0-5.618 5.686 5.535 5.535 0 0 0 5.618-5.686" transform="translate(-201.976 -14.823)" style="fill:#fff"/>
+        <path d="M374.379 33.126h-2.469V38.9h-2.61V23.045h5.89a5.036 5.036 0 0 1 1.971 9.7l5.165 6.162h-3.1zm-2.469-2.333h3.285a2.655 2.655 0 0 0 0-5.3h-3.285z" transform="translate(-247.092 -15.419)" style="fill:#fff"/>
+        <path d="M429.013 35.707h-6.592l-1.064 3.193h-2.832l5.64-15.857h3.126L432.91 38.9h-2.81zm-.838-2.447-2.447-7.249-2.469 7.249z" transform="translate(-280.024 -15.418)" style="fill:#fff"/>
+        <path d="M492.849 38.9h-2.605V27.348l-3.965 8.952h-2.039l-3.964-8.948V38.9h-2.605V23.044h3.035l4.554 10.239 4.553-10.239h3.036z" transform="translate(-319.597 -15.418)" style="fill:#fff"/>
+        <path d="M549.7 35.707h-6.59l-1.065 3.193h-2.832l5.641-15.857h3.126L553.6 38.9h-2.809zm-.838-2.447-2.446-7.249-2.469 7.249z" transform="translate(-360.773 -15.418)" style="fill:#fff"/>
+      </g>
+    </svg>
+  </div>
+</header>
+
+
+<!-- MAIN -->
+<main class="max-w-2xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
+
+  <!-- Hero -->
+  <div class="mb-12">
+    <span class="step-number mb-3 block">Briefs de proyecto</span>
+    <h1 class="step-title mb-4" style="font-size:clamp(2.6rem,8vw,4rem)">
+      ¿En qué<br>podemos<br>ayudarte?
+    </h1>
+    <p class="step-subtitle max-w-md">
+      Selecciona el tipo de brief que necesitas completar. Lo usaremos para entender tu proyecto y prepararte una propuesta.
+    </p>
+  </div>
+
+  <!-- Cards -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+    <!-- Brief Sitio Web -->
+    <a href="brief-web.html" class="brief-card">
+      <div class="brief-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e41279" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+        </svg>
+      </div>
+      <div class="brief-card-label">Brief</div>
+      <div class="brief-card-title">Sitio Web</div>
+      <p class="brief-card-desc">
+        Para cotizar y desarrollar tu presencia web: landing page, sitio corporativo, catálogo, e-commerce o plataforma.
+      </p>
+      <div class="brief-card-steps">
+        <span class="brief-card-step-tag">Contacto</span>
+        <span class="brief-card-step-tag">Proyecto</span>
+        <span class="brief-card-step-tag">Tipo de sitio</span>
+        <span class="brief-card-step-tag">Funcionalidades</span>
+        <span class="brief-card-step-tag">Diseño</span>
+        <span class="brief-card-step-tag">Presupuesto</span>
+      </div>
+      <span class="brief-card-cta">
+        Completar brief
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <!-- Brief Marketing -->
+    <a href="brief-marketing.html" class="brief-card">
+      <div class="brief-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e41279" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+        </svg>
+      </div>
+      <div class="brief-card-label">Brief</div>
+      <div class="brief-card-title">Marketing</div>
+      <p class="brief-card-desc">
+        Para diseñar tu estrategia digital: pauta, contenido, posicionamiento de marca y generación de clientes potenciales.
+      </p>
+      <div class="brief-card-steps">
+        <span class="brief-card-step-tag">Negocio</span>
+        <span class="brief-card-step-tag">Cliente ideal</span>
+        <span class="brief-card-step-tag">Competencia</span>
+        <span class="brief-card-step-tag">Diferencial</span>
+        <span class="brief-card-step-tag">Estado digital</span>
+        <span class="brief-card-step-tag">Objetivos</span>
+      </div>
+      <span class="brief-card-cta">
+        Completar brief
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+  </div>
+
+  <!-- Footer note -->
+  <p class="text-center text-xs text-[#444] mt-12 leading-relaxed">
+    ¿No sabes cuál elegir? Escríbenos a
+    <a href="mailto:hola@geniorama.co" class="text-[#6b7280] hover:text-[#e41279] transition-colors">hola@geniorama.co</a>
+  </p>
+
+</main>
+
+</body>
+</html>
