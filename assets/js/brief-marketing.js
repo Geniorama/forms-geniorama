@@ -7,7 +7,7 @@ const STORAGE_KEY = 'geniorama_brief_mkt_v1';
 const TOTAL_STEPS  = 8;
 
 // Configura el webhook de envío
-const SUBMIT_URL = 'https://hook.us1.make.com/mwkymp2moacwe79h20sk65n2hsdci781';
+const SUBMIT_URL = 'https://n8n.srv1196066.hstgr.cloud/webhook/8fd6c120-aa05-46c7-8710-7dd67d713d5b';
 
 // ── Etiquetas legibles para el payload ──────────────────────
 const CHANNEL_LABELS = {
@@ -349,6 +349,7 @@ async function handleSubmit(e) {
       const d = state.data;
       const payload = {
         _subject:         `Brief Marketing — ${d.empresa || d.nombre || 'Cliente'}`,
+        _formType:        'brief-marketing',
         nombre:           d.nombre,
         empresa:          d.empresa,
         email:            d.email,
@@ -387,11 +388,12 @@ async function handleSubmit(e) {
         materiales:       labelList(d.materiales, MATERIAL_LABELS),
         decisor:          d.decisor,
         adicional:        d.adicional,
+        infoAdicional:    d.adicional,
       };
 
       const res = await fetch(SUBMIT_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
         body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);

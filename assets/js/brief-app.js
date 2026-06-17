@@ -9,7 +9,7 @@ const TOTAL_STEPS  = 8;
 // Configura aquí el endpoint de envío.
 // Ejemplo con FormSubmit.co: 'https://formsubmit.co/ajax/hola@geniorama.co'
 // Si lo dejas vacío, el formulario se descarga como JSON.
-const SUBMIT_URL = 'https://hook.us1.make.com/j6ax6bpalmvsnrm84xwx51pztb7l8maj';
+const SUBMIT_URL = 'https://n8n.srv1196066.hstgr.cloud/webhook/8fd6c120-aa05-46c7-8710-7dd67d713d5b';
 
 // ── Mapas de etiquetas para el resumen ──────────────────────
 const LABELS = {
@@ -574,17 +574,21 @@ async function handleSubmit(e) {
 
   try {
     if (SUBMIT_URL) {
+      const { tieneApp, tipoApp, pantallas, ...rest } = state.data;
       const payload = {
         _subject:        `Brief App Móvil - ${state.data.empresa || state.data.nombre || 'Cliente'}`,
         _formType:       'brief-app',
-        ...state.data,
+        ...rest,
+        tienePrevio:     tieneApp,
+        tipoProyecto:    tipoApp,
+        estructura:      label(pantallas),
         fases:           label(state.data.fases),
         funcionalidades: label(state.data.funcionalidades),
         idiomas:         label(state.data.idiomas),
       };
       const res = await fetch(SUBMIT_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
         body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
